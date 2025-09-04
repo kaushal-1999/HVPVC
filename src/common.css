@@ -1,0 +1,236 @@
+.AMFButton {
+    padding: 8px 15px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: all .2s ease;
+    font-size: 16px;
+    border: 2px solid var(--main);
+    background-color: transparent;
+    color: var(--main);
+
+}
+
+.AMFButton:hover {
+    border: 2px solid transparent;
+    background-color: var(--main);
+    color: white;
+}
+
+.AMFButton.sm {
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+.AMFButton.md {
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+.AMFLink {
+    color: var(--main);
+    text-decoration: none;
+}
+
+/* styled table - Striped  */
+.responsiveTable {
+    width: 100%;
+    /* overflow-x: auto; */
+    /* overflow-y: hidden; */
+    background-color: var(--main-bg);
+}
+
+
+.styled-table {
+    min-width: 400px;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    border-collapse: collapse;
+}
+
+.styled-table.desktopSize {
+    min-width: 1000px;
+}
+
+.styled-table {
+    border: 0.05px solid var(--border);
+}
+
+.styled-table th:not(:last-child) {
+    border-right: 0.05px solid var(--border);
+}
+
+.styled-table td:not(:last-child) {
+    border-left: 0.05px solid var(--border);
+    border-top: 0.05px solid var(--border);
+}
+
+.styled-table td:last-child {
+    border-left: 0.05px solid var(--border);
+    border-top: 0.05px solid var(--border);
+}
+
+.styled-table thead tr {
+    background-color: var(--bg-muted);
+    color: var(--text-emphasis);
+    text-align: left;
+}
+
+.styled-table>thead>tr>th {
+    font-size: 12px;
+    padding: 15px 10px;
+    color: white;
+}
+
+.styled-table td {
+    font-size: 15px;
+    padding: 10px 15px;
+    color: white;
+}
+
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: var(--bg);
+}
+
+.styled-table tbody tr:nth-of-type(odd) {
+    background-color: var(--bg);
+}
+
+
+.tableActionBtns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.tableActionBtns>button,
+.tableActionBtns>a,
+.tableActionBtns>div:not(.noStyle) {
+    width: 30px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.tableActionBtns>.edit {
+    color: #4caf50;
+    background-color: #CCFFCE;
+}
+
+.tableActionBtns>.edit:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+.tableActionBtns>.delete {
+    color: #fa6c39;
+    background-color: #FFDACC;
+}
+
+.tableActionBtns>.delete:hover {
+    background-color: #fa6c39;
+    color: #FFF;
+}
+
+.tableActionBtns>.view {
+    color: #397dfa;
+    background-color: #ccdeff;
+}
+
+.tableActionBtns>.view:hover {
+    background-color: #397dfa;
+    color: #FFF;
+}
+
+
+/* admin outlet  header css */
+
+.adminheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    color: white;
+}
+
+.adminheader p {
+    font-size: 18px;
+}
+
+.image_container_view {
+    position: relative;
+}
+
+.image_container_view:hover::after {
+    content: "";
+    display: flex;
+    width: 150px;
+    height: 150px;
+    background-size: 150px;
+    /* background-image: url("http://localhost:5000/banner/banner-1710594064336.jpg"); */
+    background-image: var(--background);
+    /* background-color: red; */
+    position: absolute;
+    top: -10px;
+    left: -170px;
+    z-index: 242;
+
+}
+
+/* alert  */
+.common-alert-box-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 54;
+    background-color: rgba(0, 0, 0, 0.215);
+}
+
+.common-alert-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, .2);
+    padding: 20px;
+}
+
+.common-alert-box-img {
+    height: 100px;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.common-alert-box-img>img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.common-alert-box-msg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.common-alert-box-msg-text {
+    font-size: 25px;
+}

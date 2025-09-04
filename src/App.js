@@ -1,25 +1,75 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+
+
+import HomeBase from './base/HomeBase';
+import Home from './pages/Home';
+
+
+const router = createBrowserRouter([
+  // {
+  //   path: '/login',
+  //   element: <AdminLogin />,
+  // // },
+  // {
+  //   path: '/admin',
+  //   element: <Protected />,
+  //   children: [
+  //     {
+  //       path: '',
+  //       element: <AdminBase />,
+  //       children: [
+  //         {
+  //           path: 'dashboard',
+  //           element: <Dashboard />,
+  //         },
+  //         {
+  //           path: 'membership',
+  //           element: <Member />,
+  //         },
+  //         {
+  //           path: 'letestactivity',
+  //           element: <LatestActivity />,
+  //         },
+  //         {
+  //           path: 'slider',
+  //           element: <Slider />,
+  //         },
+  //         {
+  //           path: 'gallery',
+  //           element: <Gallery />,
+  //         },
+  //         {
+  //           path: 'team',
+  //           element: <Team />,
+  //         },
+  //         {
+  //           path: 'youtube',
+  //           element: <Youtube />,
+  //         },
+  //         {
+  //           path: 'files',
+  //           element: <Files />,
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
+  {
+    path: '/',
+    element: <HomeBase />,
+    children: [
+      {
+        index: true, // shorthand for path: '/'
+        element: <Home />,
+      },
+      
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
