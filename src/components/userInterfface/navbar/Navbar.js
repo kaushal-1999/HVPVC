@@ -53,7 +53,7 @@ const Navbar = () => {
         <li><Link to="/about" onClick={toggle}>About Us</Link></li>
         <li><Link to="/contact" onClick={toggle}>Contact Us</Link></li>
         <button 
-          className="btn-member" 
+          className="btn-member-mobile" 
           onClick={() => { toggle(); navigate('/admission'); }}
         >
           Admission

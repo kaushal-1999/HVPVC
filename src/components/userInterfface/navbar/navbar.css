@@ -1,6 +1,8 @@
+/* Base Header */
 header {
   width: 100%;
-  background-color: #002147; /* dark blue */
+  background-color: #002147;
+  /* dark blue */
   color: white;
   position: sticky;
   top: 0;
@@ -31,6 +33,7 @@ header {
   text-decoration: none;
 }
 
+/* Links (desktop by default) */
 .nav-links {
   list-style: none;
   display: flex;
@@ -51,7 +54,8 @@ header {
   color: #ffcc00;
 }
 
-.btn-member {
+/* Admission button */
+.btn-member, .btn-member-mobile {
   background-color: #ffcc00;
   color: #002147;
   border: none;
@@ -61,9 +65,11 @@ header {
   border-radius: 4px;
   cursor: pointer;
   transition: 0.3s;
+  display: block;
+  /* 🔥 hidden by default (desktop view) */
 }
 
-.btn-member:hover {
+.btn-member, .btn-member-mobile:hover {
   background-color: #e6b800;
 }
 
@@ -74,22 +80,32 @@ header {
   cursor: pointer;
 }
 
-/* Mobile */
+/* ---- Mobile Styling ---- */
+.nav-links.mobile {
+  display: none;
+  /* hide mobile by default (all screen sizes) */
+}
+
+/* Mobile breakpoint */
 @media (max-width: 768px) {
   .nav-links.desktop {
     display: none;
+    /* hide desktop menu */
   }
 
   .toggle-button {
     display: block;
+    /* show toggle button */
   }
 
   .nav-links.mobile {
     display: none;
+    /* still hidden until active */
     flex-direction: column;
     background-color: #002147;
     position: absolute;
     top: 65px;
+    /* below navbar */
     right: 0;
     width: 100%;
     padding: 15px 0;
@@ -100,6 +116,7 @@ header {
 
   .nav-links.mobile.active {
     display: flex;
+    /* show only on mobile when toggled */
   }
 
   .nav-links.mobile li {
@@ -107,6 +124,8 @@ header {
   }
 
   .btn-member {
+    display: none;
+    /* 🔥 show Admission button on mobile only */
     margin-top: 10px;
   }
 }
