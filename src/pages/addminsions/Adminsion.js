@@ -22,10 +22,10 @@ const Adminsion = () => {
 
     {/* <!-- Contact Info / Office Hours --> */}
     <div class="admission__contact">
-      <h3>Contact / Office Hours</h3>
+      <h3> Office Hours</h3>
       <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
       <p>Email: <a href="mailto:info@hvpatilvidyalaya.edu">info@hvpatilvidyalaya.edu</a></p>
-      <p>Phone: <a href="tel:+911234567890">+91 12345 67890</a></p>
+      {/* {/* <p>Phone: <a href="tel:+911234567890">+91 12345 67890</a></p> * */}
     </div>
   </div>
 </section>

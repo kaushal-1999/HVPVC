@@ -1,0 +1,141 @@
+.notice-board-container {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #f0f4f8;
+}
+
+/* Heading */
+.notice-board-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0077c2;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.notice-board-heading::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #00acc1;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+    animation: boomer 1s ease forwards;
+}
+
+/* Boomerang/slide-in effect */
+@keyframes boomer {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(20px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Board Flex */
+.notice-board {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Left Side */
+.notice-details {
+    flex: 2;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    min-width: 300px;
+    overflow-y: auto;
+    animation: boomer 1s ease;
+    font-size: 1rem;
+    /* text size for content */
+    line-height: 1.6;
+}
+
+/* Right Side */
+.notice-list {
+    flex: 1;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    min-width: 200px;
+    overflow-y: auto;
+    animation: boomer 1s ease;
+}
+
+/* Notice Item */
+.notice-item {
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Date styling */
+.notice-item .date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+/* Title styling */
+.notice-item .title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Hover effect */
+.notice-item:hover {
+    background-color: #e0f7fa;
+    transform: translateX(3px);
+}
+
+/* Active item */
+.notice-item.active {
+    background-color: #0077c2;
+    color: #fff;
+}
+
+.notice-item.active .date {
+    color: #d0e9f7;
+}
+
+/* Desktop view: fixed height 450px */
+@media (min-width: 1025px) {
+
+    .notice-details,
+    .notice-list {
+        height: 450px;
+    }
+}
+
+/* Tablet / mobile: height 500px */
+@media (max-width: 1024px) {
+
+    .notice-details,
+    .notice-list {
+        height: 500px;
+    }
+
+    .notice-board {
+        flex-direction: column;
+    }
+}

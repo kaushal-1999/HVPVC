@@ -43,10 +43,10 @@ const HeroSection = () => {
     <section className="hero">
       <div className="hero__content">
         <small>Welcome to</small>
-        <h1>H.V. Patil Vidyalaya & Jr. College</h1>
+        <h1>H.V. Patil Vidyalaya & Jr. College Chinchghar</h1>
         <p>
-          Quality education for Grades <strong>5–12</strong>.<br />
-          Marathi medium & semi-English for 5–10. Higher secondary (11–12) — Arts & Science.
+          Quality education for Grades <strong>5th-12th</strong>.<br />
+          Marathi medium & semi-English for 5th–10th. Higher secondary FYJC (11th–12th) — Arts & Science.
         </p>
         <div className="hero__buttons">
           <a href="/apply" className="btn btn-primary">Apply</a>
