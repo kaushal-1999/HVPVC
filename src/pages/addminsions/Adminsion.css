@@ -1,0 +1,172 @@
+.admission {
+    background: linear-gradient(to right, #f0f4f8, #ffffff);
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.admission__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Title */
+.admission__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #003d66;
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* Animated underline */
+.admission__title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #0077c2;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 60px;
+    }
+}
+
+/* Intro text */
+.admission__intro {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Steps */
+.admission__steps ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.admission__steps li {
+    background: #e0f2f1;
+    border-left: 5px solid #0077c2;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Step number circle */
+.step-number {
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: #0077c2;
+    color: white;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover animation */
+.admission__steps li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 119, 194, 0.2);
+}
+
+/* Contact / Office */
+/* .admission__contact {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    width: 2000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.admission__contact h3 {
+    color: #003d66;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.admission__contact a {
+    color: #0077c2;
+    text-decoration: none;
+}
+
+.admission__contact a:hover {
+    text-decoration: underline;
+} */
+
+
+
+/* Contact / Office section adjusted to match steps width */
+.admission__contact {
+    background: #ffffff;
+    padding: 1rem 1.5rem; /* same padding as steps */
+    border-radius: 8px;   /* same border radius as steps */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 600px;     /* same as approximate step width */
+    width: 100%;          /* responsive width */
+    margin: 0 auto;       /* center align */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.admission__contact h3 {
+    color: #003d66;
+    margin-bottom: 0;
+    font-size: 1rem; /* match step text height */
+}
+
+.admission__contact p {
+    font-size: 1rem; /* match step text */
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+}
+
+.admission__contact a {
+    color: #0077c2;
+    text-decoration: none;
+}
+
+.admission__contact a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admission__steps li {
+        padding: 0.8rem 1rem;
+    }
+}
