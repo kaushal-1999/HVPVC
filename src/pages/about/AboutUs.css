@@ -1,0 +1,165 @@
+.section-heading {
+  padding-top: 30px;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-heading h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #0f172a;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.section-heading h3::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background: var(--accent, #0b5ed7);
+  border-radius: 2px;
+}
+
+
+
+/* About Us - Card UI */
+.about-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.about-left {
+  text-align: center;
+  background: #f9fafc;
+  padding: 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.principal-photo {
+  width: 220px;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.about-left h4 {
+  margin: 16px 0 6px;
+  font-size: 1.2rem;
+}
+
+.principal-name {
+  margin: 4px 0;
+  font-weight: 600;
+}
+
+.principal-role {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.principal-quote {
+  font-style: italic;
+  color: #374151;
+}
+
+.about-right {
+  padding: 24px;
+}
+
+.about-right p {
+  margin-bottom: 14px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Vision & Mission Boxes */
+.mission-vision {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.mv-box {
+  background: #f0f4ff;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.mv-box h5 {
+  margin: 0 0 6px;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .about-card {
+    flex-direction: row;
+  }
+
+  .about-left {
+    flex: 1;
+    border-bottom: none;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-right {
+
+    /* Section Heading */
+    .about-heading {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--accent, #2c3e50);
+      /* fallback if var(--accent) missing */
+      position: relative;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+
+    /* Underline effect */
+    .about-heading::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--accent, #2c3e50);
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Sub-headings inside card */
+    .sub-heading {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-top: 16px;
+    }
+
+    flex: 2;
+    padding: 36px;
+  }
+
+  .mission-vision {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="footer-column">
           <h3>Contact</h3>
           <p>Email: info@hvpatilcollege.com</p>
-          <p>Phone: +91 98765 43210</p>
+          <p>Phone: +91 88888 88888</p>
           <p>Address: Chinchghar, Maharashtra</p>
           <div className="social-icons">
             <a href="#"><FaFacebookF /></a>

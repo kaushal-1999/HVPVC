@@ -1,6 +1,6 @@
 import React from 'react';
 import './navbar.css';
-import Logo from '../../../assets/logo.jpeg'; // ensure file exists
+import Logo from '../../../assets/logo.png'; // ensure file exists
 import { HiOutlineBars3CenterLeft } from "react-icons/hi2";
 import { ImCross } from "react-icons/im";
 import { UseAppCtx } from '../../../context/AppContext';
@@ -22,7 +22,7 @@ const Navbar = () => {
         <ul className="nav-links desktop">
           <li><Link to="/" >Home</Link></li>
           <li><Link to="/departments" >Departments</Link></li>
-          <li><Link to="/faculty" >Faculty</Link></li>
+          <li><Link to="/gallery" >Gallery</Link></li>
           <li><Link to="/notice" >Notice</Link></li>
           <li><Link to="/events" >Events</Link></li>
           <li><Link to="/about" >About Us</Link></li>
