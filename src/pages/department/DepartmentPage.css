@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.department-page {
+    font-family: "Poppins", sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ================= Hero ================= */
+.department-hero {
+    background: url("https://images.unsplash.com/photo-1588075592446-2407d5d7e5b2?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: dept-zoomBg 20s infinite alternate ease-in-out;
+}
+
+.department-hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    animation: dept-fadeIn 2s ease forwards;
+}
+
+.department-hero-title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    animation: dept-slideDown 1.5s ease;
+}
+
+.department-hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0;
+    animation: dept-fadeInUp 2.5s ease forwards;
+    animation-delay: 1s;
+}
+
+/* ================= Sections ================= */
+.department-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.department-section-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: #222;
+    display: inline-block;
+    position: relative;
+    animation: dept-fadeInUp 1.2s ease;
+}
+
+.department-section-title::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 4px;
+    margin: 0.5rem auto;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b, #1fddff, #28a745);
+    border-radius: 3px;
+    animation: dept-expand 2s forwards;
+}
+
+.department-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    animation: dept-fadeIn 1.5s ease;
+}
+
+.department-card {
+    background: white;
+    border-radius: 14px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.department-card:hover {
+    transform: perspective(1000px) rotateY(8deg) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.department-card::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(255, 65, 108, 0.2), rgba(31, 221, 255, 0.2));
+    transform: rotate(25deg);
+    transition: top 0.6s ease;
+}
+
+.department-card:hover::before {
+    top: 100%;
+}
+
+.department-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+/* ================= Outro ================= */
+.department-outro {
+    text-align: center;
+    min-height: auto;
+    padding: 4rem 2rem 6rem;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.department-outro-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    animation: dept-glow 3s infinite alternate;
+}
+
+.department-outro-text {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.department-cta-btn {
+    background: #ff416c;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.4s ease, background 0.4s ease;
+    animation: dept-pulse 2s infinite;
+    margin-top: 1rem;
+}
+
+.department-cta-btn:hover {
+    background: #ff4b2b;
+    transform: scale(1.1);
+}
+
+.department-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 10px;
+    background: radial-gradient(circle, #1fddff 30%, transparent 70%);
+    animation: dept-waveMove 1s infinite linear;
+    opacity: 0.4;
+    pointer-events: none;
+    display: none;
+}
+
+/* ================= Animations ================= */
+@keyframes dept-fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes dept-slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes dept-fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes dept-expand {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes dept-glow {
+    from {
+        text-shadow: 0 0 10px #1fddff, 0 0 20px #28a745;
+    }
+
+    to {
+        text-shadow: 0 0 20px #ff416c, 0 0 40px #6f42c1;
+    }
+}
+
+@keyframes dept-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes dept-waveMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes dept-zoomBg {
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 110%;
+    }
+}
