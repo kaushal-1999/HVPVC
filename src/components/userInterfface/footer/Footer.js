@@ -7,12 +7,12 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        
+
         {/* About Section */}
         <div className="footer-column">
           <h3>About Us</h3>
           <p>
-            H.V.Patil Vidyalaya & Jr. College Chinchghar is dedicated to 
+            H.V.Patil Vidyalaya & Jr. College Chinchghar is dedicated to
             providing quality education and shaping bright futures.
           </p>
         </div>
@@ -49,7 +49,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p>
-          &copy; {new Date().getFullYear()} H.V.Patil Vidyalaya & Jr. College Chinchghar. 
+          &copy; {new Date().getFullYear()} H.V.Patil Vidyalaya & Jr. College Chinchghar.
           All Rights Reserved.
         </p>
         <p className="developer-credit">

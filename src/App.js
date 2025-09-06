@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import HomeBase from './base/HomeBase';
 import Home from './pages/Home';
 import Contact from './pages/contact/Contact';
-import About from './ErrrorPages/UnderProcess/UnderProgress';
+import About from './pages/about/AboutPage';
 import Departments from './pages/department/DepartmentPage';
 import Notice from './ErrrorPages/UnderProcess/UnderProgress';
 import Events from './ErrrorPages/UnderProcess/UnderProgress';
