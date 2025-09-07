@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Contact from './pages/contact/Contact';
 import About from './pages/about/AboutPage';
 import Departments from './pages/department/DepartmentPage';
-import Notice from './pages/notice/NoticePage';
+import Notice from './pages/notice/NoticeBoard';
 import Events from './ErrrorPages/UnderProcess/UnderProgress';
 import Gallery from './ErrrorPages/UnderProcess/UnderProgress';
 import AdminLogin from './components/adminInterface/pages/login/Login';
