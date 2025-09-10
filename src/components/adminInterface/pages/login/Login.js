@@ -1,56 +1,68 @@
-import React, { useState, useMemo } from 'react';
-import './Login.css';
-import loginIMG from '../../../../assets/userLogin.png';
-import LoginBg from '../../../../assets/login-bg.jpeg';
-import axios from 'axios';
-import { useSearchParams } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-// import { API } from '../../../constant';
+import React, { useState } from "react";
+import "./Login.css";
+import loginIMG from "../../../../assets/userLogin.png";
+import LoginBg from "../../../../assets/login-bg.jpeg";
+import axios from "axios";
+import { useSearchParams, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { API } from "../../../../constant";
 
 const Login = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const [urlSearchParam] = useSearchParams();
-    const nextUrl = useMemo(() => urlSearchParam.get("next"), [urlSearchParam]);
+    const nextUrl = urlSearchParam.get("next"); // simpler
+
+    const navigate = useNavigate();
 
     const handleUsernameChange = (e) => setUsername(e.target.value);
     const handlePasswordChange = (e) => setPassword(e.target.value);
 
     const loginUser = async (e) => {
         e.preventDefault();
-        setError('');
+        setError("");
 
         if (!username || !password) {
-            setError('Please fill in both fields.');
-            toast.error('Username and password required');
+            setError("Please fill in both fields.");
+            toast.error("Username and password required");
             return;
         }
 
         try {
-            // Replace with your API
-            // const response = await axios.post(`${API}/admin/user/login`, { username, password });
-            // Mock success response for demo
-            const response = { data: { status: 'success', token: 'demo-token', user: { username } } };
+            const response = await axios.post(`${API}/user/login`, {
+                email: username,
+                password,
+            });
 
-            const { status, token, user } = response.data;
+            const { token, user } = response.data;
 
-            if (status !== 'success') {
-                setError('Invalid credentials. Please try again.');
-                toast.error('Login failed!');
-            } else {
-                toast.success('Login successful!');
-                localStorage.setItem('token', token);
-                localStorage.setItem('user', JSON.stringify(user));
-
-                setTimeout(() => {
-                    window.location.href = nextUrl || '/admin/dashboard';
-                }, 1500);
+            if (!token || !user) {
+                setError("Invalid credentials. Please try again.");
+                toast.error("Login failed!");
+                return;
             }
+
+            localStorage.setItem("token", token);
+            localStorage.setItem("user", JSON.stringify(user));
+
+            toast.success("Login successful!");
+
+            // Redirect after short delay
+            setTimeout(() => {
+                if (nextUrl) {
+                    navigate(nextUrl);
+                } else if (user.role === "Admin" || user.role === "SuperAdmin") {
+                    navigate("/admin/dashboard");
+                } else {
+                    navigate("/login");
+                }
+            }, 1000);
         } catch (err) {
-            const msg = err.response?.data?.message || 'Login failed. Please try again.';
+            console.error(err); // important for debugging
+            const msg = err.response?.data?.error || "Login failed. Please try again.";
             setError(msg);
             toast.error(`Login failed: ${msg}`);
         }
@@ -66,13 +78,13 @@ const Login = () => {
                         <form className="login-form__form" onSubmit={loginUser}>
                             <h2 className="login-form__heading">Admin Login</h2>
                             <div className="login-form__group">
-                                <label className="login-form__label">Username</label>
+                                <label className="login-form__label">Email</label>
                                 <input
                                     type="text"
                                     className="login-form__input"
                                     value={username}
                                     onChange={handleUsernameChange}
-                                    placeholder="Enter username"
+                                    placeholder="Enter email"
                                 />
                             </div>
                             <div className="login-form__group">
