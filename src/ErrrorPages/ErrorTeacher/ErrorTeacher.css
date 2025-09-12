@@ -1,0 +1,42 @@
+.error-teacher-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f8f9fa;
+}
+
+.error-teacher-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.error-teacher-container h2 {
+    margin-bottom: 20px;
+    color: #dc3545;
+}
+
+.error-teacher-container p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.error-teacher-close-btn {
+    padding: 12px 25px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.error-teacher-close-btn:hover {
+    background: #0056b3;
+}

@@ -1,0 +1,322 @@
+/* Container */
+.staff-container {
+    max-width: 1200px;
+    /* margin: 15px auto; */
+    /* top/bottom margin 15px */
+    padding: 15px;
+    /* padding inside container */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.staff-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background: linear-gradient(270deg, #6a11cb, #2575fc, #6a11cb);
+    background-size: 600% 600%;
+    animation: gradientAnimation 12s ease infinite;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(101, 67, 231, 0.7);
+}
+
+.staff-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Add User Button */
+.btn-add {
+    padding: 0.6rem 1.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: linear-gradient(270deg, #ff416c, #ff4b2b, #ff416c);
+    background-size: 400% 400%;
+    animation: gradientAnimation2 8s ease infinite;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(255, 75, 43, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-add:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 18px rgba(255, 75, 43, 0.7);
+}
+
+/* Pagination controls */
+.pagination-controls {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.pagination-controls select {
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1.5px solid #ccc;
+    cursor: pointer;
+    outline-offset: 2px;
+    transition: border-color 0.3s ease;
+}
+
+.pagination-controls select:focus {
+    border-color: #6a11cb;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Table */
+.staff-table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    font-size: 1rem;
+}
+
+.staff-table thead tr {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 12px;
+}
+
+.staff-table thead th {
+    padding: 14px 20px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.staff-table tbody tr {
+    background: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.07);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: default;
+    border-radius: 10px;
+}
+
+.staff-table tbody tr:hover {
+    box-shadow: 0 7px 18px rgba(38, 97, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.staff-table tbody td {
+    padding: 15px 20px;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #444;
+}
+
+/* Zebra striping */
+.staff-table tbody tr:nth-child(even) {
+    background: #f5f7ff;
+}
+
+/* Status Dot */
+.status-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    border-radius: 50%;
+    vertical-align: middle;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.status-dot.active {
+    background-color: #4caf50;
+    box-shadow: 0 0 6px #4caf50aa;
+}
+
+.status-dot.inactive {
+    background-color: #e53935;
+    box-shadow: 0 0 6px #e53935aa;
+}
+
+/* Buttons in Table */
+.btn-update,
+.btn-view {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 6px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    color: white;
+}
+
+.btn-update.activate {
+    background: #28a745;
+}
+
+.btn-update.activate:hover {
+    background: #218838;
+    box-shadow: 0 4px 10px #218838aa;
+    transform: translateY(-1px);
+}
+
+.btn-update.deactivate {
+    background: #dc3545;
+}
+
+.btn-update.deactivate:hover {
+    background: #b02a37;
+    box-shadow: 0 4px 10px #b02a37aa;
+    transform: translateY(-1px);
+}
+
+.btn-view {
+    background: #007bff;
+}
+
+.btn-view:hover {
+    background: #0056b3;
+    box-shadow: 0 4px 12px #0056b3aa;
+    transform: translateY(-1px);
+}
+
+/* Pagination Buttons */
+.pagination-pages {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    padding: 8px 14px;
+    border: 1.8px solid #6a11cb;
+    background: white;
+    color: #6a11cb;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(106, 17, 203, 0.3);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.page-btn:hover {
+    background: #6a11cb;
+    color: white;
+    box-shadow: 0 6px 14px rgba(106, 17, 203, 0.7);
+}
+
+.page-btn.active {
+    background: #6a11cb;
+    color: white;
+    cursor: default;
+    box-shadow: 0 6px 18px rgba(106, 17, 203, 0.8);
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #6a11cb;
+    font-weight: 700;
+    padding: 2rem 0;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .staff-table {
+        font-size: 0.95rem;
+        min-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .staff-table {
+        font-size: 0.85rem;
+        min-width: 600px;
+    }
+
+    .modal {
+        padding: 1.5rem;
+    }
+
+    .btn-add {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .staff-table {
+        font-size: 0.8rem;
+        min-width: 500px;
+    }
+
+    .staff-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+}
+
+/* Animations */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradientAnimation2 {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}

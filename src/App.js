@@ -10,6 +10,8 @@ import Staff from "./components/adminInterface/pages/Staff/Staff";
 import Slider from "./components/adminInterface/pages/Slider/Slider";
 import AdminLogin from "./components/adminInterface/pages/login/Login";
 import ProtectedRoute from "./utils/ProtectedRoute";
+import ErrorTeacher from "./ErrrorPages/ErrorTeacher/ErrorTeacher";
+
 
 // User interface Imports
 import HomeBase from "./base/HomeBase";
@@ -27,11 +29,14 @@ const router = createBrowserRouter([
     path: "/login",
     element: <AdminLogin />,
   },
-
+  {
+    path: "/error-teacher",
+    element: <ErrorTeacher />,
+  },
   // Admin routes - protected
   {
     path: "/admin",
-    element: <ProtectedRoute allowedRoles={["Admin", "SuperAdmin"]} />, // only Admin/SuperAdmin
+    element: <ProtectedRoute allowedRoles={["Admin", "SuperAdmin", "Staff"]} />, // only Admin/SuperAdmin
     children: [
       {
         element: <AdminBase />,
